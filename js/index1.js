@@ -4,12 +4,10 @@ const getIdeaBtnNode = document.getElementById('getIdeaBtn');
 
 const setNewActivity = () => {
     fetch("http://www.boredapi.com/api/activity/")
-        .then(response => response.json())
-        .then(res => {
-            console.log(res)
-            console.log(res.activity)
-            subtitleNode.innerText = res.activity;
-        })
+    .then(response => response.json())
+    .then(res => {
+        subtitleNode.innerText = res.activity;
+    })
 }
 
 const changeBackground = () => {
