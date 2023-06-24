@@ -12,11 +12,11 @@ const changeTitle = () => {
 
 const setNewActivity = () => {
     fetch("http://www.boredapi.com/api/activity/")
-        .then((response) => response.json())
-        .then((res) => {
+        .then(response => response.json())
+        .then(res => {
             subtitleNode.innerText = res.activity;
-        });
-};
+        })
+}
 
 const getIdeaHandler = () => {
     setNewActivity();
