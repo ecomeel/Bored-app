@@ -15,13 +15,13 @@ const setNewActivity = () => {
         .then((response) => response.json())
         .then((res) => {
             subtitleNode.innerText = res.activity;
-            changeTitle();
-            changeBackground();
         });
 };
 
 const getIdeaHandler = () => {
     setNewActivity();
+    changeTitle();
+    changeBackground();
 };
 
 
