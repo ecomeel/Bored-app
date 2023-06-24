@@ -2,13 +2,13 @@ const titleNode = document.getElementById('title');
 const subtitleNode = document.getElementById('subtitle');
 const getIdeaBtnNode = document.getElementById('getIdeaBtn');
 
-const setNewActivity = () => {
-    fetch("http://www.boredapi.com/api/activity/")
-    .then(response => response.json())
-    .then(res => {
-        subtitleNode.innerText = res.activity;
-    })
-}
+// const setNewActivity = () => {
+    // fetch("http://www.boredapi.com/api/activity/")
+    // .then(response => response.json())
+    // .then(res => {
+    //     subtitleNode.innerText = res.activity;
+    // })
+// }
 
 const changeBackground = () => {
     document.body.className = 'green-gradient-back';
@@ -19,9 +19,16 @@ const changeTitle = () => {
 }
 
 const getIdeaHandler = () => {
-    changeTitle();
+    // changeTitle();
+    // changeBackground();
+    // setNewActivity();
+    fetch("http://www.boredapi.com/api/activity/")
+    .then(response => response.json())
+    .then(res => {
+        subtitleNode.innerText = res.activity;
+    })
     changeBackground();
-    setNewActivity();
+    changeTitle();
 }
 
 getIdeaBtnNode.addEventListener('click', getIdeaHandler);
